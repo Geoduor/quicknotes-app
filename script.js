@@ -143,9 +143,8 @@ function addNote(text, category) {
         category: category,
         createdAt: new Date().toISOString()
     };
-
+    
     notes.unshift(newNote);
-
     saveNotes();
     render();
 }
