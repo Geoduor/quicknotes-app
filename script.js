@@ -41,10 +41,11 @@ function loadNotes() {
     }
 }
 
-// ---------- 3. Save notes ----------
+// ---------- 3. Save notes ------------
 function saveNotes() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(notes));
 }
+
 
 // ---------- 4. Update the note count ----------
 function updateNoteCount(count) {
