@@ -7,6 +7,7 @@ const searchInput = document.querySelector("#search-input");
 const notesList = document.querySelector("#notes-list");
 const noteCount = document.querySelector("#note-count");
 const errorMessage = document.querySelector("#error-message");
+const clearAllBtn = document.querySelector("#clear-all-btn");
 
 const STORAGE_KEY = "quicknotes";
 const ALLOWED_CATEGORIES = ["personal", "work", "study"];
@@ -147,7 +148,7 @@ function addNote(text, category) {
     
     notes.unshift(newNote);
 
-    
+
     saveNotes();
     render();
 }
@@ -159,6 +160,28 @@ function deleteNote(id) {
     saveNotes();
     render();
 }
+
+// ---------- Clear all notes ----------
+function clearAllNotes() {
+    if (notes.length === 0) {
+        return;
+    }
+
+    const confirmed = confirm("Delete all notes?");
+
+    if (confirmed) {
+        notes = [];
+
+        saveNotes();
+        render();
+
+        errorMessage.textContent = "";
+    }
+}
+
+clearAllBtn.addEventListener("click", () => {
+    clearAllNotes();
+});
 
 // ---------- 8. Validate and submit ----------
 noteForm.addEventListener("submit", (event) => {

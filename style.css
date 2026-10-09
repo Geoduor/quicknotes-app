@@ -345,3 +345,36 @@ footer {
         width: 100%;
     }
 }
+
+/* ---------- Clear All button ---------- */
+.notes-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.notes-toolbar #note-count {
+    margin: 0;
+}
+
+#clear-all-btn {
+    background-color: #c0392b;
+    padding: 10px 15px;
+}
+
+#clear-all-btn:hover {
+    background-color: #922b21;
+}
+
+@media (max-width: 600px) {
+    .notes-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    #clear-all-btn {
+        width: 100%;
+    }
+}
