@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickNotes App</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>QuickNotes</h1>
+            <p>Capture your thoughts. Organize your ideas.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="note-section">
+            <h2>Create a Note</h2>
+
+            <form id="note-form">
+                <div class="form-group note-writing">
+                    <label for="note-input">Your note</label>
+                    <input
+                        type="text"
+                        id="note-input"
+                        maxlength="201"
+                        placeholder="Write your note..."
+                        autocomplete="off"
+                    >
+                    <p class="character-hint">Maximum 200 characters</p>
+                </div>
+
+                <div class="form-group note-options">
+                    <label for="note-category">Category</label>
+                    <select id="note-category">
+                        <option value="personal">Personal</option>
+                        <option value="work">Work</option>
+                        <option value="study">Study</option>
+                    </select>
+
+                    <button type="submit">Add Note</button>
+                </div>
+            </form>
+
+            <p id="error-message" role="alert" aria-live="polite"></p>
+        </section>
+
+        <section class="notes-section">
+            <div class="notes-heading">
+                <h2>Your Notes</h2>
+
+                <div class="search-group">
+                    <label for="search-input">Search notes</label>
+                    <input
+                        type="search"
+                        id="search-input"
+                        placeholder="Search your notes..."
+                    >
+                </div>
+            </div>
+
+            <p id="note-count" aria-live="polite">No notes</p>
+            <ul id="notes-list"></ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 QuickNotes App. Keep your ideas organized.</p>
+    </footer>
+</body>
+</html>
