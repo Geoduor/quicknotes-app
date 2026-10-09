@@ -146,6 +146,8 @@ function addNote(text, category) {
     };
     
     notes.unshift(newNote);
+
+    
     saveNotes();
     render();
 }
